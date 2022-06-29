@@ -1,0 +1,98 @@
+RESTAURANT with REACT NATIVE
+
+PAGES
+    []-> Sign Up & Login * SAME PAGE *
+    []-> Loading Page - when app opened -
+    []-> Navigation Bar 
+    []-> Side Bar
+    []-> Profile Page
+    []-> Product List Page
+    []-> Product Detail Page
+    []-> Review Page
+    []-> Choose Membership Page
+    []-> Membership Advantages Page
+/////////////////////////////////////////////////////////////////////////
+PROCESS
+    User
+        []-> can login
+        []-> can log out
+        []-> can update information
+        []-> can remove its account
+        []-> can buy membership (PRO,STUDENT,USER)
+        []-> can Review to product
+        []-> can CRUD Reviews
+        []-> can add-remove friend
+        []-> has name, surname, adress, email, password, 
+        []-> has images,videos
+    ------------------------------
+        
+    
+    Admin
+        []-> has products,reviews,password(encrypted),rate(float)
+        []-> can CRUD product
+        []-> can block User
+        []-> can remove product(which are belongs to other users)
+        []-> can see user List & user data
+/////////////////////////////////////////////////////////////////////////7
+OBJECTS
+        
+        #common fields#
+            -status
+            -created_at
+            -updated_at
+    User
+        -name (string)    | required
+        -surname (string) | optional 
+        -email (string)   | required
+        -password (encrypted string) | required
+        -profile photo | optional
+
+
+    Product
+        -user_id
+        -product_id
+        -text
+        -image or video
+        
+    
+    Membership
+        -id
+        -name
+
+    Advantages
+        -id
+        -detail
+        -membership_id
+    Member_User
+        -id
+        -user_id
+        -membership_id
+        -expired_date
+
+    Review
+        -id
+        -user_id
+        -post_id
+        -review
+        -rate
+
+/////////////////////////////////////////////////////////////////////////
+Techs
+    Front-end Tech:
+        -Javascript
+        -AwesomeLibrary(Create it!)
+        -ReactNative CLI
+        -
+    Back-end API:
+        -nodeJS
+        -ExpressJS
+        -MongoDB
+        -Mongoose
+
+UYARI: Baslamadan Önce Photoshop Veya Figmadan Tasarımını 
+
+///////////////////////////////////////////////////////////////////////////
+PACKAGES
+    -material kit ui
+    -react navigation for side bar & navbar bottom navbar
+    - TEMPLATE: https://www.figma.com/file/B5qFjwH8dtFgl67gcKc3f2/Food-delivery-app-Ui-kit-(Community)?node-id=0%3A1

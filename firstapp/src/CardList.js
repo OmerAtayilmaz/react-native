@@ -9,6 +9,16 @@ class CarList extends Component{
         this.state={
             carList:[]
         };
+        this.API={
+            users:[
+                {name:'aaa',email:"aaa@gmail.com"},
+                {name:'bbb',email:"ccc@gmail.com"},
+            ],
+            products:[
+                {code:'AXBB',name:'Phone',price:25.6,status:'active'},
+                {code:'AXCC',name:'Computer',price:25.6,status:'deactive'}
+            ]
+        }
     }
     componentDidMount(){
         axios.get('http://givecars.herokuapp.com/')
@@ -20,6 +30,10 @@ class CarList extends Component{
 <ScrollView>
         <View>
            {this.state.carList.map(e=><CardDetail key={uuid.v4()} car={e}/>)}
+        </View>
+        <View>
+            
+           {this.API.products.map((e,i,all)=> <Text key={e.code}>Code:{e.code} Product{i+1}:{e.name}</Text>)}
         </View>
         </ScrollView>
     )

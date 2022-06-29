@@ -1,20 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { createAppContainer,createSwitchNavigatior } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
+import BooksScreen from "./src/screens/BooksScreen";
+import BookDetailScreen from "./src/screens/BookDetailScreen";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Hello World!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const navigator=createStackNavigator(
+  {
+    Books:BooksScreen,
+    BookDetail:BookDetailScreen
   },
-});
+  {
+    initialRouteName:'Books',
+    defaultNavigationOptions:{
+      title:'Restaurant'
+    }
+  }
+);
+
+
+export default createAppContainer(navigator);
+
